@@ -1,0 +1,19 @@
+#faster key repeat and delay
+xset r rate 210 40
+
+#Keyboard layout
+setxkbmap -layout ru,us -variant dvorak, -option grp:alt_shift_toggle &
+
+#clipmenu
+clipmenud &
+
+#Whallpaper
+nitrogen --restore &
+
+#transparancy composer
+xcompmgr &
+
+#redshift
+redshift-gtk &
+
+dwmbar &

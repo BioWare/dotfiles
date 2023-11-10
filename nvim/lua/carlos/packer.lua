@@ -8,23 +8,16 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.1',
+	  'nvim-telescope/telescope.nvim', tag = '0.1.3',
 	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
-  use({
-	  'rose-pine/neovim',
-	  as = 'rose-pine',
-	  config = function()
-		  require("rose-pine").setup()
-		  vim.cmd('colorscheme rose-pine')
-	  end
-  })
 
   use ('nvim-treesitter/nvim-treesitter', {run  = ':TSUpdate'})
   use ('theprimeagen/harpoon')
   use ('mbbill/undotree')
   use ('tpope/vim-fugitive')
+  use ('airblade/vim-gitgutter')
   use ('kdheepak/lazygit.nvim')
   use ('NLKNguyen/papercolor-theme')
 
@@ -51,20 +44,15 @@ return require('packer').startup(function(use)
 	  }
     }
 
+    --db
     use {
-        'phpactor/phpactor',
-        run = 'composer install --no-dev -o',
-        ft = { 'php' }, -- Активировать phpactor только для файлов PHP
-        config = function()
-            -- Настройки для phpactor
-            vim.g.phpactor_completion = true -- Включить автокомплит
-
-            -- Настройки для автокомплита с использованием LSP и плагина cmp-nvim
-            require('lspconfig').intelephense.setup{
-                capabilities = require('cmp_nvim_lsp').default_capabilities()
-            }
-        end
+        "tpope/vim-dadbod",
+        requires = {
+         "kristijanhusak/vim-dadbod-ui",
+         "kristijanhusak/vim-dadbod-completion"
+        },
     }
 
+    use ("yorik1984/newpaper.nvim")
 
 end)
