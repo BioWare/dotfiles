@@ -1,0 +1,72 @@
+live_config_reload = true
+#"window.opacity" = 0.3
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "0x4b535d"
+blue = "0x1168e3"
+cyan = "0x1b7c83"
+green = "0x055d20"
+magenta = "0x622cbc"
+red = "0x86061d"
+white = "0x66707b"
+yellow = "0x4e2c00"
+
+[colors.cursor]
+cursor = "0x0e1116"
+text = "0xffffff"
+
+[colors.normal]
+black = "0x0e1116"
+blue = "0x0349b4"
+cyan = "0x1b7c83"
+green = "0x024c1a"
+magenta = "0x622cbc"
+red = "0xa0111f"
+white = "0x66707b"
+yellow = "0x3f2200"
+
+[colors.primary]
+background = "0xffffff"
+foreground = "0x010409"
+
+[font]
+size = 7.5
+
+[font.bold]
+family = "Hack"
+style = "Bold"
+
+[font.bold_italic]
+family = "Hack"
+style = "Bold Italic"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.italic]
+family = "Hack"
+style = "Italic"
+
+[font.normal]
+family = "Hack"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
+
+[scrolling]
+history = 10000
+multiplier = 10
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+
+[window.padding]
+x = 2
+y = 2
