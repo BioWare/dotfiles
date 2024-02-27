@@ -42,4 +42,114 @@ require("obsidian").setup({
       date_format = "%Y-%m-%d",
       time_format = "%H:%M",
     },
+
+  -- Optional, by default when you use `:ObsidianFollowLink` on a link to an external
+  -- URL it will be ignored but you can customize this behavior here.
+  ---@param url string
+  follow_url_func = function(url)
+    -- Open the URL in the default web browser.
+    vim.fn.jobstart({"open", url})  -- Mac OS
+    -- vim.fn.jobstart({"xdg-open", url})  -- linux
+  end,
+
+  -- Optional, set to true if you use the Obsidian Advanced URI plugin.
+  -- https://github.com/Vinzent03/obsidian-advanced-uri
+  use_advanced_uri = false,
+
+  -- Optional, set to true to force ':ObsidianOpen' to bring the app to the foreground.
+  open_app_foreground = false,
+
+  picker = {
+    -- Set your preferred picker. Can be one of 'telescope.nvim', 'fzf-lua', or 'mini.pick'.
+    name = "telescope.nvim",
+    -- Optional, configure key mappings for the picker. These are the defaults.
+    -- Not all pickers support all mappings.
+    mappings = {
+      -- Create a new note from your query.
+      new = "<C-x>",
+      -- Insert a link to the selected note.
+      insert_link = "<C-l>",
+    },
+  },
+
+  -- Optional, sort search results by "path", "modified", "accessed", or "created".
+  -- The recommend value is "modified" and `true` for `sort_reversed`, which means, for example,
+  -- that `:ObsidianQuickSwitch` will show the notes sorted by latest modified time
+  sort_by = "modified",
+  sort_reversed = true,
+
+  -- Optional, determines how certain commands open notes. The valid options are:
+  -- 1. "current" (the default) - to always open in the current window
+  -- 2. "vsplit" - to open in a vertical split if there's not already a vertical split
+  -- 3. "hsplit" - to open in a horizontal split if there's not already a horizontal split
+  open_notes_in = "current",
+
+  -- Optional, configure additional syntax highlighting / extmarks.
+  -- This requires you have `conceallevel` set to 1 or 2. See `:help conceallevel` for more details.
+  ui = {
+    enable = true,  -- set to false to disable all additional syntax features
+    update_debounce = 200,  -- update delay after a text change (in milliseconds)
+    -- Define how various check-boxes are displayed
+    checkboxes = {
+      -- NOTE: the 'char' value has to be a single character, and the highlight groups are defined below.
+      [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
+      ["x"] = { char = "", hl_group = "ObsidianDone" },
+      [">"] = { char = "", hl_group = "ObsidianRightArrow" },
+      ["~"] = { char = "󰰱", hl_group = "ObsidianTilde" },
+      -- Replace the above with this if you don't have a patched font:
+      -- [" "] = { char = "☐", hl_group = "ObsidianTodo" },
+      -- ["x"] = { char = "✔", hl_group = "ObsidianDone" },
+
+      -- You can also add more custom ones...
+    },
+    -- Use bullet marks for non-checkbox lists.
+    bullets = { char = "•", hl_group = "ObsidianBullet" },
+    external_link_icon = { char = "", hl_group = "ObsidianExtLinkIcon" },
+    -- Replace the above with this if you don't have a patched font:
+    -- external_link_icon = { char = "", hl_group = "ObsidianExtLinkIcon" },
+    reference_text = { hl_group = "ObsidianRefText" },
+    highlight_text = { hl_group = "ObsidianHighlightText" },
+    tags = { hl_group = "ObsidianTag" },
+    hl_groups = {
+      -- The options are passed directly to `vim.api.nvim_set_hl()`. See `:help nvim_set_hl`.
+      ObsidianTodo = { bold = true, fg = "#f78c6c" },
+      ObsidianDone = { bold = true, fg = "#89ddff" },
+      ObsidianRightArrow = { bold = true, fg = "#f78c6c" },
+      ObsidianTilde = { bold = true, fg = "#ff5370" },
+      ObsidianBullet = { bold = true, fg = "#89ddff" },
+      ObsidianRefText = { underline = true, fg = "#c792ea" },
+      ObsidianExtLinkIcon = { fg = "#c792ea" },
+      ObsidianTag = { italic = true, fg = "#89ddff" },
+      ObsidianHighlightText = { bg = "#75662e" },
+    },
+  },
+
+  -- Specify how to handle attachments.
+  attachments = {
+    -- The default folder to place images in via `:ObsidianPasteImg`.
+    -- If this is a relative path it will be interpreted as relative to the vault root.
+    -- You can always override this per image by passing a full path to the command instead of just a filename.
+    img_folder = "assets/imgs",  -- This is the default
+    -- A function that determines the text to insert in the note when pasting an image.
+    -- It takes two arguments, the `obsidian.Client` and an `obsidian.Path` to the image file.
+    -- This is the default implementation.
+    ---@param client obsidian.Client
+    ---@param path obsidian.Path the absolute path to the image file
+    ---@return string
+    img_text_func = function(client, path)
+      local link_path
+      local vault_relative_path = client:vault_relative_path(path)
+      if vault_relative_path ~= nil then
+        -- Use relative path if the image is saved in the vault dir.
+        link_path = vault_relative_path
+      else
+        -- Otherwise use the absolute path.
+        link_path = tostring(path)
+      end
+      local display_name = vim.fs.basename(link_path)
+      return string.format("![%s](%s)", display_name, link_path)
+    end,
+  },
+
+
 })
