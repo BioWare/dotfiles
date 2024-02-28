@@ -65,29 +65,6 @@ return require('packer').startup(function(use)
     -- Install without configuration
     use ({ 'projekt0n/github-nvim-theme' })
 
-
-    --neorg
-    use {
-        "nvim-neorg/neorg",
-        config = function()
-            require('neorg').setup {
-                load = {
-                    ["core.defaults"] = {}, -- Loads default behaviour
-                    ["core.concealer"] = {}, -- Adds pretty icons to your documents
-                    ["core.dirman"] = { -- Manages Neorg workspaces
-                        config = {
-                            workspaces = {
-                                notes = "~/notes",
-                            },
-                        },
-                    },
-                },
-            }
-        end,
-        run = ":Neorg sync-parsers",
-        requires = "nvim-lua/plenary.nvim",
-    }
-
     --obsidian
     use({
         "epwalsh/obsidian.nvim",
