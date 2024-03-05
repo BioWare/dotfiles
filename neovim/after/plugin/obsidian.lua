@@ -17,6 +17,7 @@ require("obsidian").setup({
       folder = "~/Sync/obsidian/jesusrag/Daily/",
       -- Optional, if you want to change the date format for the ID of daily notes.
       date_format = "%Y-%m-%d",
+      time_format = "%H:%M",
       -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
       template = nil
     },
