@@ -56,7 +56,8 @@ return require('packer').startup(function(use)
         "tpope/vim-dadbod",
         requires = {
          "kristijanhusak/vim-dadbod-ui",
-         "kristijanhusak/vim-dadbod-completion"
+         "kristijanhusak/vim-dadbod-completion",
+         "pbogut/vim-dadbod-ssh"
         },
     }
 

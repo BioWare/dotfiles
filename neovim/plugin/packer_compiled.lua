@@ -205,6 +205,11 @@ _G.packer_plugins = {
     path = "/home/carlos/.local/share/nvim/site/pack/packer/start/vim-dadbod-completion",
     url = "https://github.com/kristijanhusak/vim-dadbod-completion"
   },
+  ["vim-dadbod-ssh"] = {
+    loaded = true,
+    path = "/home/carlos/.local/share/nvim/site/pack/packer/start/vim-dadbod-ssh",
+    url = "https://github.com/pbogut/vim-dadbod-ssh"
+  },
   ["vim-dadbod-ui"] = {
     loaded = true,
     path = "/home/carlos/.local/share/nvim/site/pack/packer/start/vim-dadbod-ui",
