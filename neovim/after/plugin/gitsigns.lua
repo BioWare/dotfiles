@@ -60,6 +60,7 @@ require('gitsigns').setup {
     map('n', '<leader>hu', '<cmd>Gitsigns undo_stage_hunk<CR>')
     map('n', '<leader>hR', '<cmd>Gitsigns reset_buffer<CR>')
     map('n', '<leader>hp', '<cmd>Gitsigns preview_hunk<CR>')
+    --Посмотреть кто внёс изменения
     map('n', '<leader>hb', '<cmd>lua require"gitsigns".blame_line{full=true}<CR>')
     map('n', '<leader>tb', '<cmd>Gitsigns toggle_current_line_blame<CR>')
     map('n', '<leader>hd', '<cmd>Gitsigns diffthis<CR>')

@@ -30,15 +30,5 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
-local supports_document_highlight = vim.lsp.buf_request_sync(0, "textDocument/documentHighlight", nil, 1000) ~= nil
-
-if supports_document_highlight then
-    -- Регистрируем autocmd для подсветки документа
-    vim.api.nvim_exec([[
-        autocmd CursorHold * lua vim.lsp.buf.document_highlight()
-        autocmd CursorMoved * lua vim.lsp.buf.clear_references()
-    ]], false)
-end
-
 --obsidian
 vim.opt.conceallevel = 2
