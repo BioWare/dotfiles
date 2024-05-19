@@ -88,4 +88,7 @@ return require('packer').startup(function(use)
     --ufo folding
     use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
 
+    --kanban
+    use 'arakkkkk/kanban.nvim'
+
 end)
