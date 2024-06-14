@@ -1,36 +1,67 @@
 live_config_reload = true
-#"window.opacity" = 0.3
+window.opacity = 1
 
-[colors]
-draw_bold_text_with_bright_colors = true
+#[colors]
+#draw_bold_text_with_bright_colors = true
 
-[colors.bright]
-black = "0x4b535d"
-blue = "0x1168e3"
-cyan = "0x1b7c83"
-green = "0x055d20"
-magenta = "0x622cbc"
-red = "0x86061d"
-white = "0x66707b"
-yellow = "0x4e2c00"
-
-[colors.cursor]
-cursor = "0x0e1116"
-text = "0xffffff"
-
-[colors.normal]
-black = "0x0e1116"
-blue = "0x0349b4"
-cyan = "0x1b7c83"
-green = "0x024c1a"
-magenta = "0x622cbc"
-red = "0xa0111f"
-white = "0x66707b"
-yellow = "0x3f2200"
+#[colors.bright]
+#black = "0x4b535d"
+#blue = "0x1168e3"
+#cyan = "0x1b7c83"
+#green = "0x055d20"
+#magenta = "0x622cbc"
+#red = "0x86061d"
+#white = "0x66707b"
+#yellow = "0x4e2c00"
+#
+#[colors.cursor]
+#cursor = "0x0e1116"
+#text = "0xffffff"
+#
+#[colors.normal]
+#black = "0x0e1116"
+#blue = "0x0349b4"
+#cyan = "0x1b7c83"
+#green = "0x024c1a"
+#magenta = "0x622cbc"
+#red = "0xa0111f"
+#white = "0x66707b"
+#yellow = "0x3f2200"
+#
+#[colors.primary]
+#background = "0xffffff"
+#foreground = "0x010409"
 
 [colors.primary]
-background = "0xffffff"
-foreground = "0x010409"
+background = '0x171d23'
+foreground = '0xffffff'
+
+[colors.cursor]
+text = '0xfafafa'
+cursor = '0x008b94'
+
+[colors.normal]
+black = '0x333f4a'
+red = '0xd95468'
+green = '0x8bd49c'
+blue = '0x539afc'
+magenta = '0xb62d65'
+cyan = '0x70e1e8'
+white = '0xb7c5d3'
+
+[colors.bright]
+black = '0x41505e'
+red = '0xd95468'
+green = '0x8bd49c'
+yellow = '0xebbf83'
+blue = '0x5ec4ff'
+magenta = '0xe27e8d'
+cyan = '0x70e1e8'
+white = '0xffffff'
+
+
+
+
 
 [font]
 size = 7.5

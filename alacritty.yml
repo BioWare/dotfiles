@@ -1,135 +1,84 @@
-live_config_reload: true
-
-#colors:
-#  primary:
-#    background: '#0E1415'
-#    foreground: '#CECECE'
-#
-#  cursor:
-#    text: '#0E1415'
-#    cursor: '#CECECE'
-#
-#  normal:
-#    black: '#0E1415'
-#    red: '#e25d56'
-#    green: '#73ca50'
-#    yellow: '#e9bf57'
-#    blue: '#4a88e4'
-#    magenta: '#915caf'
-#    cyan: '#23acdd'
-#    white: '#f0f0f0'
-#
-#  bright:
-#    black: '#777777'
-#    red: '#f36868'
-#    green: '#88db3f'
-#    yellow: '#f0bf7a'
-#    blue: '#6f8fdb'
-#    magenta: '#e987e9'
-#    cyan: '#4ac9e2'
-#    white: '#FFFFFF'
-
-
 colors:
   # Default colors
   primary:
-    background: '0x171d23'
-    foreground: '0xffffff'
+    background: '0xffffff'
+    foreground: '0x010409'
 
   # Cursor colors
+  #
+  # These will only be used when the `custom_cursor_colors` field is set to `true`.
   cursor:
-    text:   '0xfafafa'
-    cursor: '0x008b94'
+    text: '0xffffff'
+    cursor: '0x0e1116'
 
   # Normal colors
   normal:
-    black:   '0x333f4a'
-    red:     '0xd95468'
-    green:   '0x8bd49c'
-    blue:    '0x539afc'
-    magenta: '0xb62d65'
-    cyan:    '0x70e1e8'
-    white:   '0xb7c5d3'
+    black: '0x0e1116'
+    red: '0xa0111f'
+    green: '0x024c1a'
+    yellow: '0x3f2200'
+    blue: '0x0349b4'
+    magenta: '0x622cbc'
+    cyan: '0x1b7c83'
+    white: '0x66707b'
 
   # Bright colors
   bright:
-    black:   '0x41505e'
-    red:     '0xd95468'
-    green:   '0x8bd49c'
-    yellow:  '0xebbf83'
-    blue:    '0x5ec4ff'
-    magenta: '0xe27e8d'
-    cyan:    '0x70e1e8'
-    white:   '0xffffff'
+    black: '0x4b535d'
+    red: '0x86061d'
+    green: '0x055d20'
+    yellow: '0x4e2c00'
+    blue: '0x1168e3'
+    magenta: '0x622cbc'
+    cyan: '0x1b7c83'
+    white: '0x66707b'
 
-
-
-#github-high-contrast-light
-#colors:
-#  draw_bold_text_with_bright_colors: true
-#  bright:
-#    black: "0x4b535d"
-#    blue: "0x1168e3"
-#    cyan: "0x1b7c83"
-#    green: "0x055d20"
-#    magenta: "0x622cbc"
-#    red: "0x86061d"
-#    white: "0x66707b"
-#    yellow: "0x4e2c00"
-#  cursor:
-#    cursor: "0x0e1116"
-#    text: "0xffffff"
-#  normal:
-#    black: "0x0e1116"
-#    blue: "0x0349b4"
-#    cyan: "0x1b7c83"
-#    green: "0x024c1a"
-#    magenta: "0x622cbc"
-#    red: "0xa0111f"
-#    white: "0x66707b"
-#    yellow: "0x3f2200"
-#  primary:
-#    background: "0xffffff"
-#    foreground: "0x010409"
-#
-
-
+window.opacity: 0.8
 
 font:
-  size: 10.5
+  normal:
+    family: "Hack"
+    style: Regular
   bold:
-    family: "Hack Nerd Font"
-    style: "Bold"
+    family: "Hack"
+    style: Bold
+  italic:
+    family: "Hack"
+    style: Italic
   bold_italic:
     family: "Hack"
-    style: "Bold Italic"
-  glyph_offset:
+    style: Bold Italic
+
+  # Point size
+  size: 7.5
+
+  offset:
     x: 0
     y: 0
-  italic:
-    family: "Hack Nerd Font"
-    style: "Italic"
-  normal:
-    family: "Hack Nerd Font"
-    style: "Regular"
-  offset:
+  glyph_offset:
     x: 0
     y: 0
 
 window:
-  decorations: None
-  dimensions:
-     columns: 344
-     lines: 193
   padding:
     x: 2
     y: 2
-  opacity: 1
 
 scrolling:
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
   history: 10000
+
+  # Number of lines the viewport will move for every line scrolled when
+  # scrollback is enabled (history > 0).
   multiplier: 10
 
+# If `true`, bold text is drawn using the bright color variants.
+draw_bold_text_with_bright_colors: true
+
 selection:
+  semantic_escape_chars: ',│`|:"'' ()[]{}<>'
   save_to_clipboard: true
-  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
+
+live_config_reload: true
+
