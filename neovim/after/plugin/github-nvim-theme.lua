@@ -3,8 +3,9 @@
 --})
 
 --vim.cmd('colorscheme github_dark_high_contrast')
-vim.cmd('colorscheme github_light_high_contrast')
---
+--vim.cmd('colorscheme github_light_high_contrast')
+-- Lua initialization file
+vim.cmd [[colorscheme moonfly]]
 
 --function ColorMyPencils(color)
 --	color = color or "github_light_high_contrast"

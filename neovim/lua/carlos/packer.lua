@@ -64,7 +64,8 @@ return require('packer').startup(function(use)
     --colorschemes
     --use {"yorik1984/newpaper.nvim"}
     -- Install without configuration
-    use ({ 'projekt0n/github-nvim-theme' })
+    --use ({ 'projekt0n/github-nvim-theme' })
+    use { 'bluz71/vim-moonfly-colors', as = 'moonfly'}
 
     --obsidian
     use({
