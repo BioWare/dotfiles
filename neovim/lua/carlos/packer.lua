@@ -92,4 +92,45 @@ return require('packer').startup(function(use)
     --kanban
     use 'arakkkkk/kanban.nvim'
 
+    --test
+    use({
+        'BioWare/obsidian-view',
+        requires = {
+            'epwalsh/obsidian.nvim',
+            'nvim-lua/plenary.nvim',
+        },
+        config = function()
+            require('obsidian-view').setup({
+                -- By default it will show all notes
+                -- Optional: exclude specific folders
+                exclude_folders = {"templates", "Daily"},
+                -- Optional: include only specific folders
+                include_folders = {},  -- Empty means include all except excluded
+                preview_lines = 3,
+            })
+        end,
+    })
+
+        -- Zen Mode
+    use {
+        "folke/zen-mode.nvim",
+        config = function()
+            require("zen-mode").setup {
+                window = {
+                    width = 90,
+                    options = {
+                        number = false,
+                        relativenumber = false,
+                        signcolumn = "no",
+                        list = false,
+                        cursorline = false,
+                    },
+                },
+            }
+        end
+    }
+
+
+
+
 end)
