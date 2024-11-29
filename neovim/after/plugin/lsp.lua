@@ -4,9 +4,9 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
   'intelephense',
-  'tsserver',
   'rust_analyzer',
   'eslint',
+  'ltex'
 })
 
 -- Fix Undefined global 'vim'
@@ -16,7 +16,14 @@ lsp.configure('lua-language-server', {
             diagnostics = {
                 globals = { 'vim' }
             }
-        }
+        },
+        ltex = {
+			language = "en-US",
+            enabled = { "markdown"},
+            diagnosticSeverity = "hint",
+            diagnosticLevel = "suggestions",
+            languageToolHttpServerUri = ""
+		},
     }
 })
 

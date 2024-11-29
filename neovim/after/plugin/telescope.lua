@@ -15,3 +15,4 @@ end)
 
 -- Map <leader>fb to find buffers
 vim.api.nvim_set_keymap('n', '<leader>pb', ':lua require("telescope.builtin").buffers()<CR>', { noremap = true, silent = true })
+

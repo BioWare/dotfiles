@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/bioware/.cache/nvim/packer_hererocks/2.1.1692716794/share/lua/5.1/?.lua;/home/bioware/.cache/nvim/packer_hererocks/2.1.1692716794/share/lua/5.1/?/init.lua;/home/bioware/.cache/nvim/packer_hererocks/2.1.1692716794/lib/luarocks/rocks-5.1/?.lua;/home/bioware/.cache/nvim/packer_hererocks/2.1.1692716794/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/bioware/.cache/nvim/packer_hererocks/2.1.1692716794/lib/lua/5.1/?.so"
+local package_path_str = "/home/bioware/.cache/nvim/packer_hererocks/2.1.1713484068/share/lua/5.1/?.lua;/home/bioware/.cache/nvim/packer_hererocks/2.1.1713484068/share/lua/5.1/?/init.lua;/home/bioware/.cache/nvim/packer_hererocks/2.1.1713484068/lib/luarocks/rocks-5.1/?.lua;/home/bioware/.cache/nvim/packer_hererocks/2.1.1713484068/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/bioware/.cache/nvim/packer_hererocks/2.1.1713484068/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -108,6 +108,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bioware/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
+  },
+  ["github-nvim-theme"] = {
+    loaded = true,
+    path = "/home/bioware/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
+    url = "https://github.com/projekt0n/github-nvim-theme"
   },
   ["gitsigns.nvim"] = {
     loaded = true,
@@ -179,6 +184,12 @@ _G.packer_plugins = {
     path = "/home/bioware/.local/share/nvim/site/pack/packer/start/nvim-ufo",
     url = "https://github.com/kevinhwang91/nvim-ufo"
   },
+  ["obsidian-view"] = {
+    config = { "\27LJ\2\n¸\1\0\0\4\0\a\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0024\3\0\0=\3\6\2B\0\2\1K\0\1\0\20include_folders\20exclude_folders\1\0\3\18preview_lines\3\3\20exclude_folders\0\20include_folders\0\1\3\0\0\14templates\nDaily\nsetup\18obsidian-view\frequire\0" },
+    loaded = true,
+    path = "/home/bioware/.local/share/nvim/site/pack/packer/start/obsidian-view",
+    url = "https://github.com/BioWare/obsidian-view"
+  },
   ["obsidian.nvim"] = {
     config = { "\27LJ\2\n\v\0\0\1\0\0\0\1K\0\1\0\0" },
     loaded = true,
@@ -234,10 +245,19 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bioware/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["zen-mode.nvim"] = {
+    loaded = true,
+    path = "/home/bioware/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
+    url = "https://github.com/folke/zen-mode.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: obsidian-view
+time([[Config for obsidian-view]], true)
+try_loadstring("\27LJ\2\n¸\1\0\0\4\0\a\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0024\3\0\0=\3\6\2B\0\2\1K\0\1\0\20include_folders\20exclude_folders\1\0\3\18preview_lines\3\3\20exclude_folders\0\20include_folders\0\1\3\0\0\14templates\nDaily\nsetup\18obsidian-view\frequire\0", "config", "obsidian-view")
+time([[Config for obsidian-view]], false)
 -- Config for: obsidian.nvim
 time([[Config for obsidian.nvim]], true)
 try_loadstring("\27LJ\2\n\v\0\0\1\0\0\0\1K\0\1\0\0", "config", "obsidian.nvim")

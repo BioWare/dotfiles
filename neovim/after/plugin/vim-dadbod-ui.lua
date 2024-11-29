@@ -41,4 +41,11 @@ vim.g.dbs = {
         name = 'cinemax_prod',
         url = 'ssh://ticketon_prod:mysql://n.abdikov:Bf!9UaYw8AGzCD0n@192.168.200.97/db_cinemax_cdm',
     },
+
+
+    --mongodb_docker-socialmedia
+    {
+        name = 'socialmedia-docker-local',
+        url = 'mongodb://mongodb:27017/socialmedia',
+    },
 }

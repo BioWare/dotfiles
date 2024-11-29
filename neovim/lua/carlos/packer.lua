@@ -64,7 +64,7 @@ return require('packer').startup(function(use)
     --colorschemes
     --use {"yorik1984/newpaper.nvim"}
     -- Install without configuration
-    --use ({ 'projekt0n/github-nvim-theme' })
+    use ({ 'projekt0n/github-nvim-theme' })
     use { 'bluz71/vim-moonfly-colors', as = 'moonfly'}
 
     --obsidian
@@ -111,19 +111,22 @@ return require('packer').startup(function(use)
         end,
     })
 
-        -- Zen Mode
+    -- Zen Mode
     use {
         "folke/zen-mode.nvim",
         config = function()
             require("zen-mode").setup {
                 window = {
                     width = 90,
+                    height = 30,
                     options = {
-                        number = false,
-                        relativenumber = false,
-                        signcolumn = "no",
-                        list = false,
-                        cursorline = false,
+                        signcolumn = "no", -- disable signcolumn
+                        number = false, -- disable number column
+                        relativenumber = false, -- disable relative numbers
+                        cursorline = false, -- disable cursorline
+                        cursorcolumn = false, -- disable cursor column
+                        foldcolumn = "0", -- disable fold column
+                        list = false, -- disable whitespace characters
                     },
                 },
             }
