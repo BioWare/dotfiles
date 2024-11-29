@@ -14,3 +14,15 @@ ln -s $DOTFILES/scripts/tmux-sessionizer.sh $HOME/.local/bin/tmux-sessionizer.sh
 
 rm -rf $HOME/.config/nvim
 ln -s $DOTFILES/nvim $HOME/.config/nvim
+
+# DWM конфигурация
+DWM_SRC="/usr/src/dwm"
+if [ -f "$DOTFILES/dwm/config.def.h" ]; then
+    # Проверяем, отличается ли конфиг от текущего
+    if ! cmp -s "$DOTFILES/dwm/config.def.h" "$DWM_SRC/config.def.h"; then
+        echo "DWM config changed, rebuilding..."
+        cp "$DOTFILES/dwm/config.def.h" "$DWM_SRC/config.def.h"
+        cd "$DWM_SRC" && sudo make clean install
+        echo "DWM rebuild complete"
+    fi
+fi
