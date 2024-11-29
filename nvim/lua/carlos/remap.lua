@@ -53,12 +53,6 @@ vim.api.nvim_set_keymap('n', '<Leader>g', '<Cmd>LazyGit<CR>', { noremap = true, 
 vim.keymap.set('i', ';;', '<Esc>A;')
 vim.keymap.set('i', ',,', '<Esc>A,')
 
---splits
-vim.keymap.set('n', '<C-h>', '<C-w>h')
-vim.keymap.set('n', '<C-j>', '<C-w>j')
-vim.keymap.set('n', '<C-k>', '<C-w>k')
-vim.keymap.set('n', '<C-l>', '<C-w>l')
-
 vim.keymap.set('n', '<A-l>', ':vertical resize +3<CR>', { silent = true })
 vim.keymap.set('n', '<A-h>', ':vertical resize -3<CR>', { silent = true })
 vim.keymap.set('n', '<A-k>', ':resize +3<CR>', { silent = true })
