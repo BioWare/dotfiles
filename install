@@ -15,6 +15,13 @@ ln -s $DOTFILES/scripts/tmux-sessionizer.sh $HOME/.local/bin/tmux-sessionizer.sh
 rm -rf $HOME/.config/nvim
 ln -s $DOTFILES/nvim $HOME/.config/nvim
 
+# Проверяем существование папки lazygit
+if [ ! -d "$HOME/.config/lazygit" ]; then
+    mkdir -p $HOME/.config/lazygit
+fi
+rm -rf $HOME/.config/lazygit/config.yml
+ln -s $DOTFILES/lazygit/config.yml $HOME/.config/lazygit/config.yml
+
 # DWM конфигурация
 DWM_SRC="/usr/src/dwm"
 if [ -f "$DOTFILES/dwm/config.h" ]; then
