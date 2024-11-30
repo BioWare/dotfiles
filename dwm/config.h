@@ -68,12 +68,12 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "kitty", NULL };
 static const char *web[]  = { "/usr/bin/firefox", NULL };
 static const char *clipcmd[]  = { "clipmenu", "-i", "-fn", dmenufont, NULL };
-static const char *ranger[]  = { "st", "-e", "/usr/bin/ranger", NULL };
-static const char *cmus[]  = { "st", "-e", "/usr/bin/cmus", NULL };
-static const char *alsamixer[]  = { "st", "-e", "/usr/bin/alsamixer", NULL };
+static const char *ranger[]  = { "kitty", "-e", "/usr/bin/ranger", NULL };
+static const char *cmus[]  = { "kitty", "-e", "/usr/bin/cmus", NULL };
+static const char *alsamixer[]  = { "kitty", "-e", "/usr/bin/alsamixer", NULL };
 
 
 

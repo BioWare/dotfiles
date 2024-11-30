@@ -17,11 +17,11 @@ ln -s $DOTFILES/nvim $HOME/.config/nvim
 
 # DWM конфигурация
 DWM_SRC="/usr/src/dwm"
-if [ -f "$DOTFILES/dwm/config.def.h" ]; then
+if [ -f "$DOTFILES/dwm/config.h" ]; then
     # Проверяем, отличается ли конфиг от текущего
-    if ! cmp -s "$DOTFILES/dwm/config.def.h" "$DWM_SRC/config.def.h"; then
+    if ! cmp -s "$DOTFILES/dwm/config.h" "$DWM_SRC/config.h"; then
         echo "DWM config changed, rebuilding..."
-        cp "$DOTFILES/dwm/config.def.h" "$DWM_SRC/config.def.h"
+        sudo cp "$DOTFILES/dwm/config.h" "$DWM_SRC/config.h"
         cd "$DWM_SRC" && sudo make clean install
         echo "DWM rebuild complete"
     fi
