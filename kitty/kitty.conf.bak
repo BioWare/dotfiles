@@ -7,8 +7,9 @@ hide_window_decorations yes
 window_padding_width 2
 
 
+#font_family      family="JetBrainsMono Nerd Font"
 # BEGIN_KITTY_FONTS
-font_family      family="JetBrainsMono Nerd Font"
+font_family      family="Hack"
 bold_font        auto
 italic_font      auto
 bold_italic_font auto
@@ -16,6 +17,14 @@ bold_italic_font auto
 
 
 # BEGIN_KITTY_THEME
-# Atom One Light
+# One Dark
 include current-theme.conf
 # END_KITTY_THEME
+
+remember_window_size no
+initial_window_width 1920
+initial_window_height 1080
+
+background_opacity 0.7
+#dynamic_background_opacity yes
+background_blur 1

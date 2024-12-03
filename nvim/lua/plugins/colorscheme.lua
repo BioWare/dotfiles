@@ -2,8 +2,8 @@ return {
     {
         'bluz71/vim-moonfly-colors',
         name = 'moonfly',
-        lazy = true,
-        enabled = false,
+        lazy = false,
+        enabled = true,
         priority = 1000,
         config = function()
             vim.cmd [[colorscheme moonfly]]
@@ -11,9 +11,9 @@ return {
     },
     {
         'projekt0n/github-nvim-theme',
-        lazy = false,
+        lazy = true,
         priority = 1000,
-        enabled = true,
+        enabled = false,
         config = function()
             require('github-theme').setup({
                 disable_background = true
@@ -24,17 +24,60 @@ return {
         end,
     },
     {
-        "yorik1984/newpaper.nvim",
+        "craftzdog/solarized-osaka.nvim",
         lazy = true,
         priority = 1000,
         enabled = false,
-        config = function()
-            -- vim.g.newpaper_style = "light"
-            -- require("newpaper").setup()
-            vim.cmd([[
-            highlight clear
-            set background=dark
-            ]])
+        opts = function()
+            return {
+                transparent = true,
+            }
         end,
+    },
+    {
+        "xiyaowong/nvim-transparent",
+        lazy = false,
+        priority = 1000,
+        enabled = true,
+        config = function()
+            require("transparent").setup({
+                enable = true,
+                extra_groups = {
+                    "Normal",
+                    "NormalFloat",
+                    "NvimTreeNormal",
+                    "TelescopeNormal",
+                    "SignColumn",
+                    "StatusLine",
+                    "StatusLineNC",
+                    "EndOfBuffer",
+                    -- Группы для плагинов
+                    "BufferLineTabClose",
+                    "BufferlineBufferSelected",
+                    "BufferLineFill",
+                    "BufferLineBackground",
+                    "BufferLineSeparator",
+                    "BufferLineIndicatorSelected",
+                    -- Поддержка LSP и диагностики
+                    "DiagnosticVirtualTextError",
+                    "DiagnosticVirtualTextWarn",
+                    "DiagnosticVirtualTextInfo",
+                    "DiagnosticVirtualTextHint",
+                    -- Gitsigns
+                    "GitSignsAdd",
+                    "GitSignsChange",
+                    "GitSignsDelete"
+                },
+                exclude_groups = {
+                    "CursorLine",
+                    "Folded",
+                    "Visual",
+                    "Search"
+                }
+            })
+
+            -- Автоматически включаем прозрачность при старте
+            vim.cmd("TransparentEnable")
+        end
     }
 }
