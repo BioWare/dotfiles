@@ -14,6 +14,10 @@ return {
                 {
                     name = "work",
                     path = "~/Sync/obsidian/work",
+                    overrides = {
+                        notes_subdir = "Inbox",
+                        new_notes_location = "Inbox",
+                    },
                 },
                 {
                     name = "zettlekasten",
