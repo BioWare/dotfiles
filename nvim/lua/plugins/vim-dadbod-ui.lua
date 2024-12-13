@@ -17,7 +17,7 @@ return {
                 --laracasts demo
                 {
                     name = 'laracasts demo',
-                    url = 'root@localhost:3306": mysql://root@localhost:3306/myapp',
+                    url = 'mysql://root@localhost:3306/myapp',
                 },
             }
         end,
