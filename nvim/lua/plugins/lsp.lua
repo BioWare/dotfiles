@@ -16,7 +16,6 @@ return {
                 'intelephense',
                 'rust_analyzer',
                 'eslint',
-                'ltex',
                 'sqls'
             })
 

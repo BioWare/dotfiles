@@ -49,6 +49,8 @@ return {
             enable = true,
         },
         ensure_installed = {
+            --go
+            'go',
             -- PHP экосистема
             'php',
             'php_only',
